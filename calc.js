@@ -34,3 +34,9 @@ const operator = function(firstNumber, operand, secondNumber) {
         return console.log("Invalid Operand")
     }
 };
+
+//The DOMs for the buttons and container
+const container = document.querySelector(".div-container");
+const reset = document.querySelector(".button-clear");
+const buttonOperator = document.querySelectorAll(".button-operator");
+const buttonNumber = document.querySelectorAll(".button-number");
