@@ -42,15 +42,28 @@ const buttonOperator = document.querySelectorAll(".button-operator");
 const buttonNumber = document.querySelectorAll(".button-number");
 const display = document.querySelector(".display");
 
+//storing the value of the number button
+let firstSelection;
+let operandUsed;
+
 //Event listener to display the number clicked
 buttonNumber.forEach(button => {
 button.addEventListener("click", function() {
     display.value += button.textContent;
     });
 });
+
+
 //Event listener for the operator button
 buttonOperator.forEach(button => {
     button.addEventListener("click", function() {
-        display.value = button.textContent;
-    })
-})
+        // Assigns the value when the operator is clicked
+        firstSelection = display.value;
+        // Clears the display after clicking the button
+        display.value = "";
+        // Store the value of the operator clicked the button
+        operandUsed = button.textContent;
+    });
+});
+
+console.log(firstSelection);
