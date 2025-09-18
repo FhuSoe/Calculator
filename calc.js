@@ -40,3 +40,11 @@ const container = document.querySelector(".div-container");
 const reset = document.querySelector(".button-clear");
 const buttonOperator = document.querySelectorAll(".button-operator");
 const buttonNumber = document.querySelectorAll(".button-number");
+const display = document.querySelector(".display");
+
+//Event listener to display the number clicked
+buttonNumber.forEach(button => {
+button.addEventListener("click", function() {
+    display.value += button.textContent
+    });
+});
