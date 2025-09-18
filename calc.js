@@ -45,6 +45,7 @@ const display = document.querySelector(".display");
 //storing the value of the number button
 let firstSelection;
 let operandUsed;
+let secondSelection;
 
 //Event listener to display the number clicked
 buttonNumber.forEach(button => {
@@ -66,4 +67,15 @@ buttonOperator.forEach(button => {
     });
 });
 
+//Event listener for =
+buttonOperator.forEach(button => {
+    button.addEventListener("click", function() {
+    if (button.textContent == "=") {
+        secondSelection = display.value
+       display.value = operator(firstSelection, operandUsed, secondSelection);
+    };
+    })
+    
+
+})
 console.log(firstSelection);
