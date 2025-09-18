@@ -45,6 +45,12 @@ const display = document.querySelector(".display");
 //Event listener to display the number clicked
 buttonNumber.forEach(button => {
 button.addEventListener("click", function() {
-    display.value += button.textContent
+    display.value += button.textContent;
     });
 });
+//Event listener for the operator button
+buttonOperator.forEach(button => {
+    button.addEventListener("click", function() {
+        display.value = button.textContent;
+    })
+})
