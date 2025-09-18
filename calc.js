@@ -64,18 +64,11 @@ buttonOperator.forEach(button => {
         display.value = "";
         // Store the value of the operator clicked the button
         operandUsed = button.textContent;
+        // To store and calculate with the display
+        if (button.textContent == "=") {
+            secondSelection = display.value
+            display.value = operator(firstSelection, operandUsed, secondSelection);
+    };
     });
 });
-
-//Event listener for =
-buttonOperator.forEach(button => {
-    button.addEventListener("click", function() {
-    if (button.textContent == "=") {
-        secondSelection = display.value
-       display.value = operator(firstSelection, operandUsed, secondSelection);
-    };
-    })
-    
-
-})
 console.log(firstSelection);
