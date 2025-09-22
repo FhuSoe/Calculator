@@ -58,17 +58,21 @@ button.addEventListener("click", function() {
 //Event listener for the operator button
 buttonOperator.forEach(button => {
     button.addEventListener("click", function() {
+        // To store and calculate with the display
+        //If the equal button is pressed
+        if (button.textContent == "=") {
+            //Get the second number from the display
+            secondSelection = display.value
+            //perform the calculation and show the display
+            display.value = operator(firstSelection, operandUsed, secondSelection);
+    } else {
+        //if the operator used is "+, -, / , x"
         // Assigns the value when the operator is clicked
         firstSelection = display.value;
         // Clears the display after clicking the button
         display.value = "";
         // Store the value of the operator clicked the button
         operandUsed = button.textContent;
-        // To store and calculate with the display
-        if (button.textContent == "=") {
-            secondSelection = display.value
-            display.value = operator(firstSelection, operandUsed, secondSelection);
-    };
+    }
     });
 });
-console.log(firstSelection);
