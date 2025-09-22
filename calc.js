@@ -73,8 +73,10 @@ buttonOperator.forEach(button => {
         if (button.textContent == "=") {
             //Get the second number from the display
             secondSelection = Number(display.value);
-            //perform the calculation and show the display
-            display.value = operator(firstSelection, operandUsed, secondSelection);
+            //perform the calculation and store it in a variable
+            const finalResult = operator(firstSelection, operandUsed, secondSelection);
+            //Rounds the final result if its a long decimal
+            display.value = finalResult.toFixed(2);
         } else if (firstSelection !== undefined) {
             //get the second number from the display
             secondSelection = Number(display.value);
