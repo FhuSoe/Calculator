@@ -70,10 +70,15 @@ buttonOperator.forEach(button => {
             //perform the calculation and show the display
             display.value = operator(firstSelection, operandUsed, secondSelection);
         } else if (firstSelection !== undefined) {
+            //get the second number from the display
             secondSelection = Number(display.value);
+            // Store the result in a new variable 
             const result = operator(firstSelection, operandUsed, secondSelection);
+            //Updating the firstSelection with the result
             firstSelection = result;
+            //Update the operator with new operator used
             operandUsed = button.textContent;
+            //clears the display
             display.value = "";
         } else {
             //if the operator used is "+, -, / , x"
