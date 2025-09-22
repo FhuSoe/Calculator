@@ -49,8 +49,14 @@ let secondSelection;
 
 //The AC button to clear the display
 reset.addEventListener("click", () => {
+    //clear the display
         display.value = "";
-    })
+
+    //resets all the variable to their initials state
+    firstSelection = undefined;
+    operandUsed = undefined;
+    secondSelection = undefined;
+    });
 
 //Event listener to display the number clicked
 buttonNumber.forEach(button => {
