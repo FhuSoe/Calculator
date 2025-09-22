@@ -69,6 +69,12 @@ buttonOperator.forEach(button => {
             secondSelection = Number(display.value);
             //perform the calculation and show the display
             display.value = operator(firstSelection, operandUsed, secondSelection);
+        } else if (firstSelection !== undefined) {
+            secondSelection = Number(display.value);
+            const result = operator(firstSelection, operandUsed, secondSelection);
+            firstSelection = result;
+            operandUsed = button.textContent;
+            display.value = "";
         } else {
             //if the operator used is "+, -, / , x"
             // Assigns the value when the operator is clicked
