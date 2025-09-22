@@ -1,5 +1,6 @@
 body {
     height: 100vh;
+    font-family: sans-serif;
 }
 
 .div-container {
@@ -16,6 +17,22 @@ body {
     margin-bottom: 8px;
 }
 
+button{
+    border-radius: 5px;
+    cursor: pointer;
+    flex-grow: 1;
+}
+
 .buttons {
     flex-direction: column;
+    border: solid lightgray;
+}
+
+.numbers {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    margin: 8px;
 }
