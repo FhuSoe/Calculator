@@ -47,13 +47,17 @@ let firstSelection;
 let operandUsed;
 let secondSelection;
 
+//The AC button to clear the display
+reset.addEventListener("click", () => {
+        display.value = "";
+    })
+
 //Event listener to display the number clicked
 buttonNumber.forEach(button => {
 button.addEventListener("click", function() {
     display.value += button.textContent;
     });
 });
-
 
 //Event listener for the operator button
 buttonOperator.forEach(button => {
@@ -65,8 +69,6 @@ buttonOperator.forEach(button => {
             secondSelection = Number(display.value);
             //perform the calculation and show the display
             display.value = operator(firstSelection, operandUsed, secondSelection);
-        } else if (button.textContent == "AC") { 
-            display.value = "";
         } else {
             //if the operator used is "+, -, / , x"
             // Assigns the value when the operator is clicked
