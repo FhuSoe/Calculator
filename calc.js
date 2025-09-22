@@ -26,9 +26,9 @@ const operator = function(firstNumber, operand, secondNumber) {
         return add(firstNumber, secondNumber);
     } else if (operand == "-") {
         return subtract(firstNumber, secondNumber);
-    } else if (operand == "*") {
+    } else if (operand == "*" || operand == "X") {
         return multiply(firstNumber, secondNumber);
-    } else if (operand == "/" ) {
+    } else if (operand == "/" || operand == "÷") {
         return divide(firstNumber, secondNumber);
     } else {
         return console.log("Invalid Operand")
@@ -62,17 +62,19 @@ buttonOperator.forEach(button => {
         //If the equal button is pressed
         if (button.textContent == "=") {
             //Get the second number from the display
-            secondSelection = display.value
+            secondSelection = Number(display.value);
             //perform the calculation and show the display
             display.value = operator(firstSelection, operandUsed, secondSelection);
-    } else {
-        //if the operator used is "+, -, / , x"
-        // Assigns the value when the operator is clicked
-        firstSelection = display.value;
-        // Clears the display after clicking the button
-        display.value = "";
-        // Store the value of the operator clicked the button
-        operandUsed = button.textContent;
-    }
+        } else if (button.textContent == "AC") { 
+            display.value = "";
+        } else {
+            //if the operator used is "+, -, / , x"
+            // Assigns the value when the operator is clicked
+            firstSelection = Number(display.value);
+            // Clears the display after clicking the button
+            display.value = "";
+            // Store the value of the operator clicked the button
+            operandUsed = button.textContent;
+        }
     });
 });
