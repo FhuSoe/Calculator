@@ -1,6 +1,10 @@
 body {
+    display: flex;
     height: 100vh;
     font-family: sans-serif;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
 }
 
 .div-container {
@@ -8,6 +12,10 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 1rem;
+    width: 250px;
+    border-radius: 20px;
+    height: auto;
 }
 
 .display {
@@ -15,17 +23,26 @@ body {
     box-shadow: 2px 4px 16px black;
     padding: 4px;
     margin-bottom: 8px;
+    font-size: 1rem;
+    background-color: black;
+    color: greenyellow;
+    height: 40px;
+    text-align: center;
 }
 
 button{
-    border-radius: 5px;
+    font-size: 1.5rem;
+    border-radius: 10px;
     cursor: pointer;
     flex-grow: 1;
+    border: none;
+    width: 10;
+    background-color: black;
+    color: white;
 }
 
 .buttons {
     flex-direction: column;
-    border: solid lightgray;
 }
 
 .numbers {
